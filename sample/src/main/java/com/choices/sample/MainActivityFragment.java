@@ -1,7 +1,7 @@
-package com.choices.recyclerview_itemdecoration_divider;
+package com.choices.sample;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

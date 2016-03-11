@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">RecyclerView_ItemDecoration_Divider</string>
+    <string name="app_name">RecyclerView_Divider</string>
     <string name="action_settings">Settings</string>
 </resources>
