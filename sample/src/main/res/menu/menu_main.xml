@@ -18,4 +18,9 @@
         android:orderInCategory="110"
         android:title="@string/action_grid"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_grid_agile"
+        android:orderInCategory="110"
+        android:title="@string/action_grid_agile"
+        app:showAsAction="never" />
 </menu>

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.choices.divider.Divider;
 import com.choices.divider.DividerItemDecoration;
+import com.choices.sample.MainActivity;
 import com.choices.sample.R;
 import com.choices.sample.holder.OneHolder;
 
@@ -19,9 +20,6 @@ import java.util.ArrayList;
 
 
 public class LinearFragment extends Fragment {
-
-    public static final int TYPE_DEFAULT = 0;
-    public static final int TYPE_AGILE = 1;
 
     public static LinearFragment newInstance(int type) {
         Bundle args = new Bundle();
@@ -62,7 +60,7 @@ public class LinearFragment extends Fragment {
         Bundle bundle = getArguments();
 
         DividerItemDecoration itemDecoration = new DividerItemDecoration();
-        if (bundle.getInt("Type") == TYPE_DEFAULT) {
+        if (bundle.getInt("Type") == MainActivity.TYPE_DEFAULT) {
             // default DividerItemDecoration is size = 2 and color = Color.GRAY
             mRecyclerView.addItemDecoration(itemDecoration);
         } else {
@@ -126,7 +124,7 @@ public class LinearFragment extends Fragment {
 
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View root = factory.inflate(R.layout.one_cell, parent, false);
+            View root = factory.inflate(R.layout.item_cell, parent, false);
             return new OneHolder(root);
         }
 

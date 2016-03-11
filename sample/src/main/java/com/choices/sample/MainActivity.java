@@ -10,9 +10,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.choices.sample.fragment.GridFragment;
 import com.choices.sample.fragment.LinearFragment;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final int TYPE_DEFAULT = 0;
+    public static final int TYPE_AGILE = 1;
 
     FragmentManager mFragmentManager;
 
@@ -25,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         mFragmentManager = getFragmentManager();
         mFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, LinearFragment.newInstance(LinearFragment.TYPE_DEFAULT))
+                .replace(R.id.fragment_container, LinearFragment.newInstance(TYPE_DEFAULT))
                 .commit();
     }
 
@@ -41,12 +45,22 @@ public class MainActivity extends AppCompatActivity {
         switch (id) {
             case R.id.action_linear:
                 mFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, LinearFragment.newInstance(LinearFragment.TYPE_DEFAULT))
+                        .replace(R.id.fragment_container, LinearFragment.newInstance(TYPE_DEFAULT))
                         .commit();
                 break;
             case R.id.action_linear_agile:
                 mFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, LinearFragment.newInstance(LinearFragment.TYPE_AGILE))
+                        .replace(R.id.fragment_container, LinearFragment.newInstance(TYPE_AGILE))
+                        .commit();
+                break;
+            case R.id.action_grid:
+                mFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, GridFragment.newInstance(TYPE_DEFAULT))
+                        .commit();
+                break;
+            case R.id.action_grid_agile:
+                mFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, GridFragment.newInstance(TYPE_AGILE))
                         .commit();
                 break;
         }

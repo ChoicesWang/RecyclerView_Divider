@@ -2,5 +2,6 @@
     <string name="app_name">RecyclerView_Divider</string>
     <string name="action_linear">Linear Default</string>
     <string name="action_linear_agile">Linear Agile</string>
-    <string name="action_grid">Grid</string>
+    <string name="action_grid">Grid Default</string>
+    <string name="action_grid_agile">Grid Agile</string>
 </resources>
