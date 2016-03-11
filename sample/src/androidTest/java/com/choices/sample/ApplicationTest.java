@@ -1,4 +1,4 @@
-package com.choices.recyclerview_itemdecoration_divider;
+package com.choices.sample;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
