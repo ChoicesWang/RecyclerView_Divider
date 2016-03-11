@@ -1,14 +1,16 @@
 package com.choices.sample.fragment;
 
+import android.app.Fragment;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.choices.divider.Divider;
 import com.choices.divider.DividerItemDecoration;
 import com.choices.sample.R;
 import com.choices.sample.holder.OneHolder;
@@ -17,6 +19,17 @@ import java.util.ArrayList;
 
 
 public class LinearFragment extends Fragment {
+
+    public static final int TYPE_DEFAULT = 0;
+    public static final int TYPE_AGILE = 1;
+
+    public static LinearFragment newInstance(int type) {
+        Bundle args = new Bundle();
+        args.putInt("Type", type);
+        LinearFragment fragment = new LinearFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     RecyclerView mRecyclerView;
     ArrayList<String> list;
@@ -45,8 +58,61 @@ public class LinearFragment extends Fragment {
         mRecyclerView.setAdapter(adapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        // default DividerItemDecoration is size = 2 and color = Color.GRAY
-        mRecyclerView.addItemDecoration(new DividerItemDecoration());
+
+        Bundle bundle = getArguments();
+
+        DividerItemDecoration itemDecoration = new DividerItemDecoration();
+        if (bundle.getInt("Type") == TYPE_DEFAULT) {
+            // default DividerItemDecoration is size = 2 and color = Color.GRAY
+            mRecyclerView.addItemDecoration(itemDecoration);
+        } else {
+            itemDecoration.setDividerLookup(new AgileDividerLookup());
+            mRecyclerView.addItemDecoration(itemDecoration);
+        }
+    }
+
+
+    class AgileDividerLookup extends DividerItemDecoration.SimpleDividerLookup {
+        @Override
+        public Divider getHorizontalDivider(int position) {
+            int style = position % 15;
+            switch (style) {
+                case 0:
+                    return new Divider.Builder()
+                            .size(5)
+                            .color(Color.RED)
+                            .build();
+                case 1:
+                    return new Divider.Builder()
+                            .size(5)
+                            .color(Color.RED)
+                            .margin(100, 100)
+                            .build();
+                case 2:
+                    return new Divider.Builder()
+                            .size(3)
+                            .color(Color.MAGENTA)
+                            .margin(60, 60)
+                            .build();
+                case 3:
+                    return new Divider.Builder()
+                            .size(15)
+                            .color(Color.MAGENTA)
+                            .margin(20, 20)
+                            .build();
+                case 4:
+                    return new Divider.Builder()
+                            .size(30)
+                            .color(Color.BLUE)
+                            .build();
+                default:
+                    return new Divider.Builder()
+                            .size(2)
+                            .color(Color.LTGRAY)
+                            .build();
+
+            }
+        }
     }
 
 
