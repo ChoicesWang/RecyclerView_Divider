@@ -12,7 +12,7 @@ you can use it to add an divider to RecyclerView
 ![default GridLayoutManager](https://github.com/ChoicesWang/RecyclerView_Divider/blob/master/pictures/screen%20%283%29.png)
 ![aglie GridLayoutManager](https://github.com/ChoicesWang/RecyclerView_Divider/blob/master/pictures/screen%20%284%29.png)
 
-# #Gradle
+##Gradle
 ```
 repositories {
     jcenter()
