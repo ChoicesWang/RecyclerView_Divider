@@ -2,6 +2,13 @@
 
 you can use it to add an divider to RecyclerView
 
+![default](https://github.com/ChoicesWang/RecyclerView_Divider/blob/master/pictures/screen%20%281%29.png)
+![aglie LinearLayoutManager](https://github.com/ChoicesWang/RecyclerView_Divider/blob/master/pictures/screen%20%282%29.png)
+![default GridLayoutManager](https://github.com/ChoicesWang/RecyclerView_Divider/blob/master/pictures/screen%20%283%29.png)
+![aglie GridLayoutManager](https://github.com/ChoicesWang/RecyclerView_Divider/blob/master/pictures/screen%20%284%29.png)
+
+##Usage
+
 - **Add defualt DividerItemDecoration()**
 - 
 default DividerItemDecoration is size = 2 and color = Color.GRAY.
@@ -9,7 +16,6 @@ default DividerItemDecoration is size = 2 and color = Color.GRAY.
 DividerItemDecoration itemDecoration = new DividerItemDecoration();
 mRecyclerView.addItemDecoration(itemDecoration);
 ```
-such as
 
 - **Add Agile ItemDecoration for each item**
 - 
@@ -32,5 +38,4 @@ class AgileDividerLookup extends DividerItemDecoration.SimpleDividerLookup {
          return super.getHorizontalDivider(position);
      }
  }
-such as：
 ```
