@@ -12,9 +12,7 @@ import android.view.View;
 /**
  * Created by Choices on 2016/3/10.
  * email: zezeviyao@163.com
- * <p/>
- * default DividerItemDecoration() is size = 2 and color = Color.GRAY
- * <p/>
+ * default DividerItemDecoration() is size = 2 and color = Color.GRAY ;
  * you can build custom Divider {@link DividerItemDecoration#setDividerLookup(DividerLookup)}
  */
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
